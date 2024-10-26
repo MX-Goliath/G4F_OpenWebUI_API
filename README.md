@@ -1,4 +1,3 @@
-```markdown
 # G4F_OpenWebUI_API
 A project to integrate neural networks with G4F inside OpenWebUI.
 
@@ -44,4 +43,3 @@ pip install fastapi uvicorn uuid g4f
 
 ## OpenWebUI Integration
 To connect this API to OpenWebUI, navigate to **Settings** -> **Connection** and set the **Base API Address** to `http://0.0.0.0:8000/v1`. Leave the API key field empty.
-```
