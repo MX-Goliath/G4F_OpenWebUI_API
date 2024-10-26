@@ -40,6 +40,9 @@ To use this project, you need to install the following libraries: `fastapi`, `g4
 ```bash
 pip install fastapi uvicorn uuid g4f
 ```
-
+## Running
+```bash
+python OpenWebUI_G4F.py
+```
 ## OpenWebUI Integration
 To connect this API to OpenWebUI, navigate to **Settings** -> **Connection** and set the **Base API Address** to `http://0.0.0.0:8000/v1`. Leave the API key field empty.
