@@ -38,7 +38,7 @@ MODEL_PROVIDER_MAP = {
 ## Required Libraries
 To use this project, you need to install the following libraries: `fastapi`, `g4f`, `uvicorn`, `uuid`, and any additional dependencies for `g4f` that may be required. Missing libraries might appear on the first run.
 ```bash
-pip install fastapi uvicorn uuid g4f
+pip install fastapi uvicorn uuid g4f curl_cffi browser_cookie3
 ```
 ## Running
 ```bash
