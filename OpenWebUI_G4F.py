@@ -16,11 +16,12 @@ AVAILABLE_MODELS = [
     "claude-3-haiku-20240307",
     "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
     "mistralai/Mixtral-8x7B-Instruct-v0.1",
-    "claude-3-5-sonnet",
-    "claude-3-opus-20240229-gcp",
-    "gpt-4o-2024-08-06",
+    "claude-sonnet-3.5",
     "gpt-4",
-    "llama-3.1-405b",
+    "nemotron-70b",
+    "command-r-plus",
+    "Qwen/QwQ-32B-Preview",
+    "meta-llama/Llama-3.3-70B-Instruct",
 ]
 
 MODEL_PROVIDER_MAP = {
@@ -28,11 +29,12 @@ MODEL_PROVIDER_MAP = {
     "claude-3-haiku-20240307": "DDG",
     "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo": "DDG",
     "mistralai/Mixtral-8x7B-Instruct-v0.1": "DDG",
-    "claude-3-5-sonnet": "Liaobots",
-    "claude-3-opus-20240229-gcp": "Liaobots",
-    "gpt-4o-2024-08-06": "Liaobots",
+    "claude-sonnet-3.5": "Blackbox AI",
     "gpt-4": "Binjie",
-    "llama-3.1-405b": "Blackbox"
+    "nemotron-70b": "HuggingChat",
+    "command-r-plus": "HuggingChat",
+    "Qwen/QwQ-32B-Preview": "HuggingChat",
+    "meta-llama/Llama-3.3-70B-Instruct": "HuggingChat",
 }
 
 
