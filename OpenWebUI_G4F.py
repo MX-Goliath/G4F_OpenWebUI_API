@@ -61,6 +61,7 @@ async def get_models(authorization: str = Header(None)):
 @app.post("/v1/chat/completions")
 async def chat_completions(request: Request, authorization: str = Header(None)):
     try:
+        # Проверка API-ключа, если он установлен
         if API_KEY:
             if not authorization or authorization != f"Bearer {API_KEY}":
                 raise HTTPException(status_code=401, detail="Unauthorized")
@@ -111,7 +112,10 @@ async def chat_completions(request: Request, authorization: str = Header(None)):
                             "finish_reason": None
                         }]
                     }
-                    yield f"data: {json.dumps(chunk)}\n\n"
+                    # Важно: добавлен default=str
+                    yield f"data: {json.dumps(chunk, default=str)}\n\n"
+
+                # Последний chunk с finish_reason = stop
                 chunk = {
                     "id": f"chatcmpl-{uuid.uuid4()}",
                     "object": "chat.completion.chunk",
@@ -123,11 +127,12 @@ async def chat_completions(request: Request, authorization: str = Header(None)):
                         "finish_reason": "stop"
                     }]
                 }
-                yield f"data: {json.dumps(chunk)}\n\n"
+                yield f"data: {json.dumps(chunk, default=str)}\n\n"
                 yield "data: [DONE]\n\n"
 
             return StreamingResponse(message_stream(), media_type="text/event-stream")
         else:
+            # Если не стримим, просто объединяем ответ в строку
             content = ''.join(response)
             resp = {
                 "id": f"chatcmpl-{uuid.uuid4()}",
